@@ -1,0 +1,48 @@
+<%- include ../layout.ejs%>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-2">
+            <%- include ../includes/aslideleft.ejs%>    
+        </div>
+        <div class="col-sm-10">
+            <ol class="breadcrumb">
+                <li class="active">分类管理
+                </li>
+                <li class="active">分类列表
+                </li>
+            </ol>
+            <div class="panel panel-default">
+          <div class="panel-heading">
+                  增加商品
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive input-form">
+                        <table width="400">
+                            <thead>
+                                <tr>
+                                    <th>商品分类</th>
+                                    <th>录入时间</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% categories.forEach(function(item){%>
+                                   <tr>
+                                       <td><%= item.name%></td>
+                                       &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                                       <td>
+                                        <%= moment(item.meta.createdAt).format('YYYY/MM/DD')%> 
+                                       </td>
+                                       <td>删除</td>
+                                   </tr>
+                                <% })%>                    
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

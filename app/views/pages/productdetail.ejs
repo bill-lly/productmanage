@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <center>
+        <h4><%= title%></h4>
+        <table border="1">
+            <tr>
+                <th>商品名称:</th>
+                <th>商品图片:</th>
+                <th>商品价格:</th>
+                <th>商品邮费:</th>
+                <th>商品描述:</th>
+                <th>访问量:</th>
+                <th>商品种类:</th>
+                <th>添加时间:</th>
+                <th>上一次修改时间:</th>
+            </tr>
+            <tr>
+                <td>
+                    <%= product.title%>
+                </td>
+                <td>
+                    <img height="100" width="100" src="/upload/<%= product.picture%>">
+                </td>
+                <td>
+                    <%= product.price%>
+                </td>
+                <td>
+                    <%= product.postage%>
+                </td>
+                <td>
+                    <%= product.description%>
+                </td>
+                <td>
+                    <%= product.pv%>
+                </td>
+                <td>
+                    <%= category.name%>
+                </td>
+                <td>
+                    <%= moment(product.meta.createdAt).format('YYYY/MM/DD')%>
+                </td>
+                <td>
+                    <%= moment(product.meta.updateAt).format('YYYY/MM/DD')%>
+                </td>
+            </tr>
+        </table>
+        <a href="/admin/product">点击返回</a>
+    </center>
+</body>
+
+</html>
