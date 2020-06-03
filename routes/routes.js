@@ -16,7 +16,6 @@ router.get('/signin', User.showSignin);
 router.post('/user/signin', User.signin);
 //user layout
 router.get('/logout', User.logout);
-
 //User Signup
 router.post('/user/signup', User.signup);
 //showSingup
